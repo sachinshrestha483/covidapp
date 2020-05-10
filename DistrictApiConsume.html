@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title> Vue Tutorial </title>
+    <script src="https://unpkg.com/vue"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+       <div v-for="(item,key) in resultObj"> 
+           <h1>{{key}}</h1>
+           <div v-for="(a,key) in item.districtData" >
+    <h2>{{key}} </h2>
+    <h3> confirmed Cases {{a.confirmed}}</h3>
+    <h3> Active Cases {{a.active}}</h3>
+
+    <h3> Death Cases {{a.deceased}}</h3>
+    <h3> Recovered Cases {{a.recovered}} </h3>
+    <hr>
+
+
+
+     
+</div>
+       </div>
+
+
+
+       <div v-for="(item,key) in resultObj"> 
+       <!--<h1>{{key}}</h1>--> 
+        <div v-for="(a,key) in item.districtData" >
+ 
+          
+<div v-if="key=='Ratlam'">
+    <h2 >{{key}} </h2>
+    <h3> confirmed Cases {{a.confirmed}}</h3>
+    <h3> Active Cases {{a.active}}</h3>
+   
+    <h3> Death Cases {{a.deceased}}</h3>
+    <h3> Recovered Cases {{a.recovered}} </h3>
+    <hr>
+</div>
+
+         
+
+
+
+  
+</div>
+    </div>
+     </div>
+     <script src="DistrictApiConsume.js"></script>
+</body>
+</html>
