@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+
+.navbar {
+  opacity: 0.5;
+
+}
+
+body {
+  background-image: url('coronaimage.jpg');
+}
+  .jumbotron {
+  background-image: url("coronaimage.jpg");
+  background-size: cover;
+}
+
+.card {
+  background-image: url("virus.jpg");
+  background-size: cover;
+}
+</style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Corona Summary</title>
+  </head>
+  <body>
+     
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"><b>Home</b> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="coronadataTable.html"><b>World Wide Corona Table</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="IndiacoronaStatus.html"><b>India Corona Summary</b></a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+
+
+
+<div class="jumbotron" id='summary-page'>
+    <div align="center"class='column'>
+      
+
+    </div>
+    <h1  align="center" class="display-4"> Corona World Summary</h1>
+
+    <div class="container">
+        <hr class="my-4">
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="card text-white bg-secondary my-2 mx-3  md-3 sm-12" style="max-width: 18rem;">
+            <div class="card-header" align="center">Total World Wide Cases</div>
+            <div class="card-body">
+              <h5 align="center" class="card-title">{{summary.data.total_cases}}</h5>
+              
+            </div>
+          </div>
+    
+   
+
+     
+
+      <div class="card text-white bg-secondary my-2 mx-3  md-3 sm-12" style="max-width: 18rem;">
+        <div class="card-header" align="center">Total World Recovery Cases</div>
+        <div class="card-body">
+          <h5 align="center" class="card-title">{{summary.data.recovery_cases}}</h5>
+          
+        </div>
+      </div>
+
+
+      <div class="card text-white bg-secondary my-2 mx-3  md-3 sm-12" style="max-width: 18rem;">
+        <div class="card-header" align="center">Total World Death Cases</div>
+        <div class="card-body">
+          <h5 align="center" class="card-title">{{summary.data.death_cases}}</h5>
+          
+        </div>
+      </div>
+
+        <div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+            <div class="card-header" align="center">Last Updated</div>
+            <div class="card-body">
+              <h5 align="center" class="card-title">{{summary.data.last_update}}</h5>
+              
+            </div>
+       </div>
+
+
+       <div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+        <div class="card-header" align="center">Total World Wide Currently Infected Cases</div>
+        <div class="card-body">
+          <h5 align="center" class="card-title">{{summary.data.currently_infected}}</h5>
+          
+        </div>
+   </div>
+
+
+
+   <div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Cases With Outcome</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.cases_with_outcome}}</h5>
+      
+    </div>
+</div>
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Mild Condition Active Cases</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.mild_condition_active_cases}}</h5>
+      
+    </div>
+</div>
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Critical condition Active  Cases</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.critical_condition_active_cases}}</h5>
+      
+    </div>
+</div>
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Data Recovered Closed Cases</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.recovered_closed_cases}}</h5>
+      
+    </div>
+</div>
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Death closed Cases</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.death_closed_cases}}</h5>
+      
+    </div>
+</div>
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Closed Cases recovered Percentage</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.closed_cases_recovered_percentage}}</h5>
+      
+    </div>
+</div>
+
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Closes Cases Death Percentage</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.closed_cases_death_percentage}}</h5>
+      
+    </div>
+</div>
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Active Cases Mild Percentage</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.active_cases_mild_percentage}}</h5>
+      
+    </div>
+</div>
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide Cases Critical Percentage</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.active_cases_critical_percentage}}</h5>
+      
+    </div>
+</div>
+
+
+
+<div class="card text-white bg-secondary  my-2 mx-3  md-3  sm-12" style="max-width: 18rem;">
+    <div class="card-header" align="center">Total World Wide General Death Rate</div>
+    <div class="card-body">
+      <h5 align="center" class="card-title">{{summary.data.general_death_rate}}</h5>
+      
+    </div>
+</div>
+
+
+
+<hr class="my-4">
+
+
+</div>
+   
+<hr class="my-4">
+
+  </div>
+     
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="CoronaSummary.js"></script>
+  </body>
+</html>
